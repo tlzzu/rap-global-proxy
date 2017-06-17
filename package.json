@@ -1,0 +1,32 @@
+{
+    "name": "rap-global-proxy",
+    "version": "1.0.0",
+    "description": "RAP global proxy",
+    "author": "tlzzu",
+    "keywords": [
+        "axios",
+        "RAP",
+        "Nodejs",
+        "proxy",
+        "mockjs"
+    ],
+    "contributors": [
+        "tlzzu <tlzzu@outlook.com>"
+    ],
+    "dependencies": {
+        "mockjs": "*"
+    },
+    "main": "src/index.js",
+    "scripts": {
+        "test": "node test/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tlzzu/rap-global-proxy.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tlzzu/rap-global-proxy/issues"
+    },
+    "devDependencies": {}
+}
