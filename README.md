@@ -16,6 +16,9 @@ rapproxy.doProxy('http://rapapi.org/mockjs/', 123);
 //或者
 var rapproxy = require('rap-global-proxy');
 rapproxy.doProxy({ url: 'http://rapapi.org/mockjs/', projectId: 123 });
+//或者,arr为如果返回的mock json是数组的话，使用mockjs构造的数组数量
+var rapproxy = require('rap-global-proxy');
+rapproxy.doProxy({ url: 'http://rapapi.org/mockjs/', projectId: 123,arr:'2-20' });
 ```
 
 ## 说明

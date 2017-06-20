@@ -9,6 +9,7 @@ var rapglobalproxy = {
         }
         var obj = arguments[0],
             url = 'http://rapapi.org/mockjs/',
+            arr = '2-20',
             projectId;
         if (typeof obj === 'object' && obj['projectId'] === undefined) {
             console.error('未定义projectId！');
@@ -16,6 +17,7 @@ var rapglobalproxy = {
         } else if (typeof obj === 'object' && obj['projectId'] !== undefined) {
             projectId = obj.projectId;
             if (obj['url'] !== undefined) url = obj.url;
+            if (obj['arr'] !== undefined) arr = obj.arr;
         } else if (typeof obj === 'number') {
             projectId = obj;
         } else if (typeof obj === 'string' && arguments[1] && typeof arguments[1] === 'number') {
@@ -29,12 +31,22 @@ var rapglobalproxy = {
             console.error('浏览器不符合要求，不存在XMLHttpRequest对象！');
             return false;
         }
+
+        function isArray(o) {
+            return Object.prototype.toString.call(o) === '[object Array]';
+        }
         Object.defineProperty(XMLHttpRequest.prototype, 'responseText', {
             get: function() {
                 var temp = this.response;
                 if (this.response === '') return '';
                 if (typeof this.response === 'string') temp = JSON.parse(this.response);
-                return JSON.stringify(mockjs.mock(temp));
+                if (isArray(temp)) { //如果返回的是数组，默认创建2~20个
+                    var newObj = [];
+                    newObj['data|' + arr] = temp;
+                    return JSON.stringify(mockjs.mock(newObj).data);
+                } else {
+                    return JSON.stringify(mockjs.mock(temp));
+                }
             }
         });
         var _XMLHttpRequest = XMLHttpRequest;

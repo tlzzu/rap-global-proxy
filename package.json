@@ -1,7 +1,7 @@
 {
     "name": "rap-global-proxy",
-    "version": "1.0.0",
-    "description": "RAP global proxy",
+    "version": "1.0.1",
+    "description": "RAP Global Proxy",
     "author": "tlzzu",
     "keywords": [
         "axios",

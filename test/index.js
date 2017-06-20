@@ -26,3 +26,6 @@ test(2);
 //three
 rap.doProxy({ url: 'http://rapapi.org/mockjs/', projectId: 123 });
 test(3);
+//four 如果返回的mock json是数组的话，默认创建数组的数量
+rap.doProxy({ url: 'http://rapapi.org/mockjs/', projectId: 123, arr: '2-20' });
+test(4);
