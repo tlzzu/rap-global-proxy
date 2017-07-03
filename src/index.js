@@ -41,7 +41,7 @@ var rapglobalproxy = {
                 if (this.response === '') return '';
                 if (typeof this.response === 'string') temp = JSON.parse(this.response);
                 if (isArray(temp)) { //如果返回的是数组，默认创建2~20个
-                    var newObj = [];
+                    var newObj = {};
                     newObj['data|' + arr] = temp;
                     return JSON.stringify(mockjs.mock(newObj).data);
                 } else {
