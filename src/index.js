@@ -2,7 +2,7 @@
 var mockjs = require('mockjs');
 
 var rapglobalproxy = {
-    doProxy() {
+    doProxy: function() {
         if (!arguments[0]) {
             console.error('参数为空！');
             return false;
